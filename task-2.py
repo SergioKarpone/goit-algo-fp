@@ -13,18 +13,17 @@ def draw_pythagoras_tree(t, order, size):
         t.left(45)
         draw_pythagoras_tree(t, order - 1, size * 0.7)
         
-        # Права гілка
-        # Повертаємо на 90 градусів праворуч (45 вліво -> 45 вправо)
+        # Права гілка - повертаємо на 90 градусів
         t.right(90)
         draw_pythagoras_tree(t, order - 1, size * 0.7)
         
-        # Повертаємо кут назад, щоб дивитися вздовж стовбура
+        # Повертаємо кут назад - дивимося вздовж стовбура
         t.left(45)
         # Повертаємось назад у точку розгалуження
         t.backward(size)
 
 
-# Візуалызація
+# Візуалізація
 def run_visualization(order):
     # Налаштування вікна
     window = turtle.Screen()
@@ -48,7 +47,7 @@ def run_visualization(order):
     t.left(90)
     t.pendown()
     
-    # Вимикання анімації для швидкості малювання великих дерев
+    # Малювання великих дерев без анімації (для швидкості)
     if order > 5:
         window.tracer(0)
 
